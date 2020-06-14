@@ -1,0 +1,12 @@
+server:
+  port: 8080
+#服务名称
+spring:
+  application:
+    name: chapter1
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    default-property-inclusion: non_null
