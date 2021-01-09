@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="chapter5_2" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d38e9ad8-5fe6-47c6-b501-33018b1be8a9">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="grade" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="score" class="java.lang.Integer"/>
+	<field name="sex" class="java.lang.String"/>
+	<variable name="grade_count" class="java.lang.Integer" resetType="Group" resetGroup="Group1" calculation="Count">
+		<variableExpression><![CDATA[$F{grade}]]></variableExpression>
+	</variable>
+	<variable name="grade_avg" class="java.lang.Integer" resetType="Group" resetGroup="Group1" calculation="Average">
+		<variableExpression><![CDATA[$F{score}]]></variableExpression>
+	</variable>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{grade}]]></groupExpression>
+		<groupHeader>
+			<band height="53">
+				<textField>
+					<reportElement x="10" y="0" width="100" height="30" uuid="d393bde5-2e20-4e03-8b53-e3c4e8fbef17"/>
+					<textElement>
+						<font fontName="微软雅黑" size="18"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{grade}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="54">
+				<textField>
+					<reportElement x="0" y="10" width="250" height="30" uuid="d2ee9f45-bce2-4815-b931-0366e312e9d6"/>
+					<textElement>
+						<font fontName="微软雅黑" size="18"/>
+					</textElement>
+					<textFieldExpression><![CDATA["总人数："+$V{grade_count}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="270" y="12" width="230" height="30" uuid="053779ea-d8e5-44f4-9e84-66a116e0bf10"/>
+					<textElement>
+						<font fontName="微软雅黑" size="18"/>
+					</textElement>
+					<textFieldExpression><![CDATA["平均分："+$V{grade_avg}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="620" y="12" width="100" height="30" uuid="ab358253-0e1c-43bf-bf1c-ae8bb5fd79f2"/>
+					<textElement>
+						<font fontName="微软雅黑" size="18"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{Group1_COUNT}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="250" y="20" width="250" height="30" uuid="9875b684-60cd-4d7c-b0f6-3315cc2f3289"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="微软雅黑" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[this is a title]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<detail>
+		<band height="35" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="166376af-d843-4e1e-9a96-87a6ae60ce3b"/>
+				<textElement>
+					<font fontName="微软雅黑" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="30" uuid="70d410d1-b93b-4051-90ba-3f1eb1b90cb3"/>
+				<textElement>
+					<font fontName="微软雅黑" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{score}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="30" uuid="6db2068e-3666-48b5-8b37-f760932f70db"/>
+				<textElement>
+					<font fontName="微软雅黑" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{sex}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
