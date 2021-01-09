@@ -1,4 +1,4 @@
-package chapter7;
+package chapter8;
 
 import common.JasperReportUtil;
 import org.springframework.boot.SpringApplication;
@@ -33,10 +33,10 @@ public class Chapter7Application {
             for (int j = 0; j < i; j++) {
                 name += "张三";
             }
-            s1.put("Name",name+i);
+            s1.put("Name", "<font size=\"" + (name.length() > 10 ? 10 : 20) + "\">" + name + i + "</font>");
             studentList.add(s1);
         }
-        String jasperPath = JasperReportUtil.getJasperFileDir("chapter7");
+        String jasperPath = JasperReportUtil.getJasperFileDir("chapter8");
         if (reportType.equals("pdf")) {
             JasperReportUtil.exportToPdf(jasperPath, parameters, studentList, response);
         } else if (reportType.equals("html")) {
